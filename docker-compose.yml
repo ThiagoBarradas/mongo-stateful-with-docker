@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mongo_db:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_DATA_DIR=/data/db
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
+    external: true
